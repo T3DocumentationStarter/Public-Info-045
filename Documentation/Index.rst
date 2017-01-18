@@ -33,12 +33,14 @@ My Public Info Project
 :Writing here:    `My Name <my.name@gmail.com>`__
 :Rendered:        |today|
 :Buildinfo:       `buildinfo <_buildinfo>`_
-:Others:          `overview <..>`__
+:Others:             `overview <..>`__
 
+Rendered: |today|
 
 .. toctree::
    :hidden:
 
+   ComposerTYPO3Org/Index
    HelloWorld/Index
    Hyperlinks/Index
    reStructuredText/Index
