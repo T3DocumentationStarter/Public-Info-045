@@ -6,7 +6,8 @@ Blueprint: composer.typo3.org
 =============================
 
 
-Proposal 	Make composer.typo3.org future proof and TER obsolete
+:Proposal: 	Make composer.typo3.org future proof and TER obsolete
+
 Owner/Starter 	Alexander Schnitzler
 Participants/Members 	Helmut Hummel, Thomas Löffler
 Status 	To be worked on
@@ -15,6 +16,7 @@ Topic for Gerrit 	N/A
 
 
 Goals / Motivation
+==================
 
 At the moment the extension infrastructure of TYPO3 completely relies on the TER (TYPO3 extension repository), some kind of global directory with a soap api to release new extension versions. To be able to load ter extensions via composer, there currently is a service that fetches all ter extensions as xml (https://typo3.org/fileadmin/ter/extensions.xml.gz) and converts it to a packages.json, readable by composer. However, this is just a temporary solution.
 
@@ -27,9 +29,9 @@ Currently this is done by a script, already explained some lines ago. However, t
 
 What needs to be achieved is a solution where people don't necessarily need to upload their extension to the TER to be available on composer.typo3.org. composer.typo3.org should be a real git server with real git repositories and tags, just like packagist.org. Anyway, composer.typo3.org needs a compat layer like it currently has. So, in the end extension developers should have the following options to choose from:
 
-    Directly upload/maintain an extension on composer.typo3.org
-    Tell composer.typo3.org where to find a publicly available version of the extension, so the middleware can import it
-    Upload extensions to the TER, as usual and let the middleware import/convert the ext to a git repository
+- Directly upload/maintain an extension on composer.typo3.org
+- Tell composer.typo3.org where to find a publicly available version of the extension, so the middleware can import it
+- Upload extensions to the TER, as usual and let the middleware import/convert the ext to a git repository
 
 This way the dependency on ext_emconf.php is removed and people are encouraged to maintain their extensions like a classic composer package with a valid composer.json and the TER soap upload can get an expiry date.
 
